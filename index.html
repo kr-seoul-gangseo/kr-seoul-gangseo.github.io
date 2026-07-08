@@ -275,6 +275,42 @@ body { padding-top: var(--cg-strip-h); }
 .cg-colophon-note { margin: 4px 0 0; color: #9a9aa8; }
 @media (max-width: 640px) { .cg-strip-label { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cg-skip { transition: none; } }
+
+/* ---- Mobile reading view (touch / small screens) ------------------------------------- */
+/* The immersive per-구 template is desktop-only. On touch devices and narrow screens the
+   .cg-read view is shown instead — it uses only safe, high-contrast CSS so text can never
+   go invisible on iOS Safari (no background-clip:text, backdrop-filter, 100vh, :hover-gated
+   reveals, or mix-blend-mode). Fully namespaced + generator-controlled. */
+.cg-read { display: none; }
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  /* Neutralise immersive templates that lock scrolling / lock the viewport on <body>. */
+  html, body { overflow-x: hidden !important; overflow-y: auto !important; height: auto !important;
+    min-height: 0 !important; position: static !important; touch-action: auto !important; background: #ffffff !important; }
+  .cg-immersive { display: none !important; }
+  .cg-read { display: block; }
+}
+.cg-read { max-width: 720px; margin: 0 auto; padding: 20px 18px 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #17171f; background: #ffffff; line-height: 1.75; -webkit-text-size-adjust: 100%; }
+.cg-read * { max-width: 100%; box-sizing: border-box; }
+.cg-read-head { padding: 8px 0 16px; border-bottom: 3px solid var(--cg-ra, #2d5bff); margin-bottom: 20px; }
+.cg-read-eyebrow { margin: 0 0 4px; color: var(--cg-rd, #333); font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+.cg-read-head h1 { margin: 0; font-size: clamp(30px, 8vw, 40px); line-height: 1.15; color: #14141c; font-weight: 800; }
+.cg-read h2 { font-size: 20px; margin: 30px 0 10px; padding-left: 11px; color: #14141c; font-weight: 700;
+  border-left: 5px solid var(--cg-ra, #2d5bff); }
+.cg-read p { margin: 0 0 12px; font-size: 17px; color: #23232d; }
+.cg-read section { margin: 0; }
+.cg-read ul { margin: 8px 0 0; padding-left: 20px; }
+.cg-read li { margin: 8px 0; font-size: 16px; color: #23232d; }
+.cg-read li strong { color: #111119; font-weight: 700; }
+.cg-read .facts, .cg-read .symbols { list-style: none; padding: 14px 16px; margin: 8px 0 0;
+  background: #f5f6fa; border: 1px solid #e6e8f0; border-radius: 12px; }
+.cg-read .faq details { border: 1px solid #e6e8f0; border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: #fbfbfd; }
+.cg-read .faq summary { cursor: pointer; font-weight: 700; font-size: 16px; color: #14141c; }
+.cg-read .faq details p { margin: 8px 0 2px; color: #44454f; }
+.cg-read a { color: #1a46d8; word-break: break-word; }
+.cg-read .sources { font-size: 14px; color: #55565f; }
+.cg-read .sources a { color: #3a5bd0; }
 </style>
 </head>
 <body>
@@ -283,6 +319,7 @@ body { padding-top: var(--cg-strip-h); }
     <span class="cg-ad">AD</span><span class="cg-strip-label">후원 파트너</span><span class="cg-strip-list"><a class="cg-strip-item" href="https://ikoffices.com" rel="sponsored noopener" target="_blank">일광오피스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://mobidicsaju.com" rel="sponsored noopener" target="_blank">모비딕 사주</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://www.foodskorea.com/" rel="sponsored noopener" target="_blank">전국팔도 식품도감</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://myflowmakers.com" rel="sponsored noopener" target="_blank">마이플로우메이커스</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonlijispace.com" rel="sponsored noopener" target="_blank">연리지 인테리어</a><span class="cg-strip-dot" aria-hidden="true">·</span><a class="cg-strip-item" href="https://yeonliji.io" rel="sponsored noopener" target="_blank">주식회사 연리지</a><span class="cg-strip-dot" aria-hidden="true">·</span><span class="cg-strip-item cg-strip-text">세무·법률 자문</span></span>
   </aside>
   <div id="cg-main" tabindex="-1"></div>
+  <div class="cg-immersive">
 <style>
 :root{
   --gs-bg:#F8F9FA;
@@ -847,6 +884,133 @@ body { padding-top: var(--cg-strip-h); }
   })();
   </script>
 </div>
+  </div>
+  <main class="cg-read" id="cg-read" role="main" lang="ko" style="--cg-ra:#ab672b;--cg-ra2:#cbd039;--cg-rd:#573619">
+    <header class="cg-read-head">
+      <p class="cg-read-eyebrow">서울특별시</p>
+      <h1>강서구</h1>
+    </header>
+    <div class="cg-read-body">
+      <section id="r-intro">
+        <h2>지역 소개</h2>
+        <p>강서구는 김포국제공항이라는 하늘길과 마곡의 첨단 산업단지를 함께 품은 서울 서부의 관문 자치구입니다. 조선시대 양천현(陽川縣)이 자리했던 옛 고을로, 진경산수화의 대가 겸재 정선이 현령으로 부임해 한강 절경을 화폭에 담은 예술의 무대이기도 합니다. 오늘날에는 LG사이언스파크와 코오롱, 넥센 등 대기업 연구소가 몰린 마곡지구가 조성되면서 항공·바이오·화학 R&amp;D의 거점으로 변모했습니다. 아시아 최대 규모의 서울식물원과 허준의 자취를 간직한 가양동 일대가 어우러져 산업과 문화, 자연이 공존하는 도시로 발전하고 있습니다. 송파구에 이어 서울에서 두 번째로 인구가 많은 자치구로, 화곡동 주거지역과 마곡 신도심이 대비를 이루며 성장하고 있습니다.</p>
+      </section>
+      <section id="r-facts">
+        <h2>주요 통계</h2>
+        <ul class="facts">
+          <li>인구: 약 549,050명 (2026)</li>
+          <li>면적: 41.43 km²</li>
+          <li>신설: 1977-09-01</li>
+        </ul>
+      </section>
+      <section id="r-history">
+        <h2>역사</h2>
+        <p>강서구 지역은 조선시대 경기도에 속한 양천현으로, 궁산 남쪽 기슭의 양천향교를 중심으로 한 유서 깊은 고을이었습니다. 1737년 영조 때 지어진 소악루에 올라 겸재 정선이 한강 풍광을 그렸다는 기록이 남아 있어, 진경산수화의 산실로 이름을 알렸습니다. 이후 양천군을 거쳐 경기도 김포군 양동면·양서면에 속했다가 1963년 서울시 편입 과정을 지나 영등포구에 포함되었습니다. 1977년 9월 1일 영등포구에서 분리되어 강서구가 정식으로 신설되었으며, 구 이름은 한강의 서쪽에 위치한다는 뜻에서 유래했습니다. 1988년에는 목동·신월동·신정동 일대가 양천구로 분리되어 나가면서 오늘날의 행정 경계가 갖추어졌고, 2000년대 이후 마곡지구 개발로 대대적인 도시 확장을 겪었습니다.</p>
+      </section>
+      <section id="r-geography">
+        <h2>지리·자연환경</h2>
+        <p>강서구는 서울특별시에서 가장 서쪽 끝에 위치하며, 서초구에 이어 자치구 중 두 번째로 넓은 41.43제곱킬로미터의 면적을 차지합니다. 북쪽으로는 한강을 경계로 마포구 및 경기도 고양시 덕양구와 마주하고, 서쪽으로는 경기도 김포시와 인천광역시 계양구에 접해 사실상 수도권 서부의 접경을 이룹니다. 지형은 대체로 낮고 평탄한 편이며, 개화산(132미터), 우장산, 봉제산 등 나지막한 구릉이 주거지 사이에 솟아 있습니다. 서남쪽 개화동 일대는 한강과 안양천이 합류하며 형성된 넓은 충적 평야 지대로, 과거 논농사가 성했던 흔적이 남아 있습니다. 궁산은 겸재 정선의 소악루와 양천향교를 품은 역사·경관의 요충으로, 한강 하류의 조망 명소로 꼽힙니다.</p>
+      </section>
+      <section id="r-characteristics">
+        <h2>지역 특징</h2>
+        <p>강서구의 인구는 2026년 기준 약 54만9천 명으로, 송파구에 이어 서울에서 두 번째로 많은 주민이 거주하는 자치구입니다. 13개 법정동을 20개 행정동으로 나누어 관리하며, 화곡동은 서울에서 손꼽히는 대규모 주거 밀집지로 알려져 있습니다. 산업 면에서는 김포국제공항을 배후로 한 항공 물류와, 마곡지구에 들어선 LG사이언스파크를 비롯한 첨단 R&amp;D 클러스터가 지역 경제의 핵심 축을 이룹니다. 마곡의 르웨스트·원그로브 상업시설과 코엑스 계열 복합몰이 들어서면서 업무·상업 중심지로 급성장했고, 트레이더스 홀세일 클럽과 교보문고 등이 입점해 서남권 상권을 견인하고 있습니다. 전통적 주거지 화곡동과 계획 신도심 마곡이 뚜렷이 대비되는 이중적 도시 구조가 강서구의 성격을 규정합니다.</p>
+      </section>
+      <section id="r-landmarks">
+        <h2>대표 명소</h2>
+        <ul>
+          <li><strong>김포국제공항</strong> — 공항동에 자리한 국내선 중심 공항이자 도쿄·베이징·상하이 등을 잇는 국제선 셔틀 노선의 거점으로, 강서구를 서울 서부의 관문으로 만든 대표 시설입니다.</li>
+          <li><strong>마곡지구와 LG사이언스파크</strong> — 항공·바이오·화학 분야 대기업 연구소가 집적된 첨단 산업단지로, 르웨스트와 원그로브 등 복합 상업시설이 어우러진 강서구의 신도심입니다.</li>
+          <li><strong>서울식물원</strong> — 마곡나루역과 연결된 약 50만 제곱미터 규모의 도심 속 식물원으로, 지중해관과 열대관을 갖춘 온실을 중심으로 열린숲·주제원·호수원·습지원이 조성된 2019년 개원 명소입니다.</li>
+          <li><strong>궁산과 소악루</strong> — 양천현의 옛 풍경을 간직한 나지막한 산으로, 1737년 세워진 소악루에 올라 겸재 정선이 한강 절경을 화폭에 담은 진경산수화의 무대입니다.</li>
+        </ul>
+      </section>
+      <section id="r-heritage">
+        <h2>문화유산·문화시설</h2>
+        <ul>
+          <li><strong>겸재정선미술관</strong> — 양천현령을 지낸 겸재 정선의 예술 세계를 계승·재조명하기 위해 2009년 궁산 자락에 개관한 구립 미술관으로, 진경산수화 관련 상설전시를 운영합니다.</li>
+          <li><strong>양천향교</strong> — 궁산 남쪽 기슭에 위치한, 서울에서 유일하게 원형이 보존된 조선시대 지방 교육기관으로 향교터가 서울특별시 기념물로 지정되어 있습니다.</li>
+          <li><strong>허준박물관</strong> — 동의보감을 저술한 의성 허준의 출생지로 전해지는 가양동에 세워진 한방 의학 전문 박물관으로, 조선 의학사와 약재 문화를 소개합니다.</li>
+          <li><strong>양천고성지</strong> — 궁산 정상부에 남은 삼국시대 성곽 유적으로 사적으로 지정되어 있으며, 한강 방어의 요충이었던 지역의 군사적 역사를 보여줍니다.</li>
+          <li><strong>약사사 삼층석탑과 석불입상</strong> — 개화산 자락 약사사에 전하는 석탑과 석불로, 서울특별시 유형문화재로 지정되어 강서구의 불교 문화 전통을 전합니다.</li>
+        </ul>
+      </section>
+      <section id="r-nature">
+        <h2>자연·휴식</h2>
+        <ul>
+          <li><strong>개화산과 강서둘레길 1코스</strong> — 개화동에 솟은 개화산은 산 전체가 근린공원으로 지정되어 있으며, 숲길을 따라 걷는 강서둘레길 1코스가 조성되어 주민들의 대표 산책 코스로 사랑받습니다.</li>
+          <li><strong>우장산공원</strong> — 화곡동과 발산동 경계의 해발 약 99미터 언덕에 조성된 근린공원으로, 도심 속 숲과 운동시설을 갖춰 인근 주민의 휴식처 역할을 합니다.</li>
+          <li><strong>봉제산둘레길</strong> — 화곡동과 등촌동 사이에 위치한 해발 약 117미터의 봉제산에 조성된 둘레길로, 완만한 능선을 따라 걷기 좋은 근교 트레킹 명소입니다.</li>
+          <li><strong>궁산근린공원</strong> — 양천향교와 소악루, 겸재정선미술관을 아우르는 역사·문화 공원으로, 한강 하류를 조망할 수 있는 마곡 인근의 녹지 쉼터입니다.</li>
+          <li><strong>서울식물원 호수원·습지원</strong> — 마곡의 옛 저지대를 활용해 조성한 생태 수변 공간으로, 한강과 이어지는 물길과 산책로가 사계절 도심 나들이 장소로 인기입니다.</li>
+        </ul>
+      </section>
+      <section id="r-transport">
+        <h2>교통</h2>
+        <p>강서구는 김포국제공항을 축으로 서울 지하철 5호선과 9호선, 인천국제공항철도, 김포골드라인, 서해선이 교차하는 다중 환승의 요충지입니다. 5호선은 화곡·발산·마곡 등 구의 중심 주거·업무지를 동서로 관통하고, 9호선은 마곡나루·가양·염창을 지나 강남 방면으로 빠르게 연결합니다. 공항철도를 이용하면 인천국제공항과 서울역을 직결로 오갈 수 있어 항공 이용객의 접근성이 뛰어납니다. 도로 교통으로는 인천국제공항고속도로와 올림픽대로, 남부순환로가 지나 수도권 서부와 강남권을 두루 잇습니다. 2호선 신정지선의 까치산역이 구 남쪽 경계에 닿아 있어 신도림·홍대 방면 이동도 편리합니다.</p>
+      </section>
+      <section id="r-symbols">
+        <h2>지역 상징</h2>
+        <ul class="symbols">
+          <li>구화(꽃): 국화</li>
+          <li>구목(나무): 은행나무</li>
+          <li>구조(새): 까치</li>
+        </ul>
+      </section>
+      <section id="r-faq">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <details>
+            <summary>강서구라는 이름은 어떻게 지어졌나요?</summary>
+            <p>한강의 서쪽에 위치한다는 뜻에서 강서(江西)라고 이름 지었으며, 1977년 영등포구에서 분리 신설되면서 정식 구명이 되었습니다.</p>
+          </details>
+          <details>
+            <summary>강서구에 김포국제공항이 있는데 어느 동에 속하나요?</summary>
+            <p>김포국제공항은 강서구 공항동에 자리하며, 국내선 중심이면서 도쿄·베이징·상하이 등을 잇는 국제선 셔틀 노선도 운항합니다.</p>
+          </details>
+          <details>
+            <summary>겸재 정선과 강서구는 어떤 관계가 있나요?</summary>
+            <p>진경산수화의 대가 겸재 정선이 조선시대 양천현(현 강서구)의 현령으로 부임해 궁산 소악루에서 한강 절경을 그렸으며, 이를 기려 겸재정선미술관이 세워졌습니다.</p>
+          </details>
+          <details>
+            <summary>서울식물원은 어떻게 가나요?</summary>
+            <p>지하철 9호선과 공항철도 마곡나루역과 바로 연결되어 있어 접근이 편리하며, 지중해관과 열대관을 갖춘 대형 온실과 호수원·습지원을 둘러볼 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>강서구에서 가장 대표적인 신도심은 어디인가요?</summary>
+            <p>마곡지구가 강서구의 대표 신도심으로, LG사이언스파크 등 첨단 연구소와 르웨스트·원그로브 같은 복합 상업시설이 들어선 업무·상업 중심지입니다.</p>
+          </details>
+          <details>
+            <summary>강서구 인구는 서울에서 어느 정도 규모인가요?</summary>
+            <p>2026년 기준 약 54만9천 명으로 송파구에 이어 서울에서 두 번째로 인구가 많은 자치구입니다.</p>
+          </details>
+        </div>
+      </section>
+      <section id="r-links">
+        <h2>공식 링크</h2>
+        <ul>
+          <li><a href="https://www.gangseo.seoul.kr" rel="noopener">강서구청 공식 홈페이지</a></li>
+          <li><a href="https://www.gangseo.seoul.kr/munhwa" rel="noopener">강서문화관광</a></li>
+        </ul>
+      </section>
+      <section id="r-github">
+        <h2>GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/kr-seoul-gangseo" rel="noopener">GitHub 조직: kr-seoul-gangseo</a></li>
+          <li><a href="https://github.com/kr-seoul-gangseo/kr-seoul-gangseo.github.io" rel="noopener">이 사이트 저장소</a></li>
+        </ul>
+      </section>
+      <section id="r-sources">
+        <h2>출처</h2>
+        <ul class="sources">
+          <li><a href="https://ko.wikipedia.org/wiki/%EA%B0%95%EC%84%9C%EA%B5%AC_(%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C)" rel="noopener">강서구 (서울특별시) - 위키백과</a> (조회 2026-07-08)</li>
+          <li><a href="https://www.gangseo.seoul.kr" rel="noopener">강서구청 공식 홈페이지</a> (조회 2026-07-08)</li>
+          <li><a href="https://culture.gangseo.seoul.kr/gsfc/main/contents.do?menuNo=800005" rel="noopener">구립 겸재정선미술관 소개 - 강서구 문화시설 통합운영관리시스템</a> (조회 2026-07-08)</li>
+          <li><a href="https://namu.wiki/w/%EC%84%9C%EC%9A%B8%EC%8B%9D%EB%AC%BC%EC%9B%90" rel="noopener">서울식물원 - 나무위키</a> (조회 2026-07-08)</li>
+          <li><a href="https://parks.seoul.go.kr/parks/detailView.do?pIdx=54" rel="noopener">궁산근린공원 - 정원도시 서울</a> (조회 2026-07-08)</li>
+        </ul>
+      </section>
+    </div>
+  </main>
   <aside class="cg-sponsors" aria-label="후원 파트너 상세">
     <p class="cg-spon-head"><span class="cg-ad">AD</span> 후원 파트너 <small>이 링크는 광고이며 편집상의 추천이 아닙니다 (rel=&quot;sponsored&quot;).</small></p>
     <ul class="cg-spon-grid">
